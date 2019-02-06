@@ -1,4 +1,6 @@
-from NeuralNetworks.MyFirstNeutralNetwork.NeuralNetwork import NeuralNetwork
+import numpy as np
+from NeuralNetworks.RealNeuralNetwork.NeuralNetwork import NeuralNetwork
 
-# It doesn't work
-start = NeuralNetwork(2, 3)
+if __name__ == "__main__":
+    start = NeuralNetwork([3, 3, 2, 2])
+    start.show_all()
