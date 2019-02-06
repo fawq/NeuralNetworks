@@ -1,5 +1,5 @@
 import numpy as np
-from Python.Functions.SimpleFunctions import sigmoid
+from Functions.SimpleFunctions import sigmoid
 
 
 class NeuralNetwork:
