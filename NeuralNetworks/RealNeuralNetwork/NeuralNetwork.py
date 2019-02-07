@@ -1,5 +1,7 @@
 import numpy as np
 
+from Functions.SimpleFunctions import sigmoid
+
 
 class NeuralNetwork:
     def __init__(self, array_of_lengths):
@@ -35,11 +37,15 @@ class NeuralNetwork:
         print(self.all_nodes)
 
     # Need to check
-    def get_value(self, data):
+    def get_value(self, data, out):
         self.all_nodes[0] = data
 
         for i in range(len(self.all_nodes)-1):
-            self.all_nodes[i+1] = (np.matrix(self.all_nodes[i])*np.matrix(self.all_weights[i]).T +
-                                   np.matrix(self.all_biases[i]))
+            self.all_nodes[i+1] = sigmoid(np.matrix(self.all_nodes[i])*np.matrix(self.all_weights[i]).T +
+                                          np.matrix(self.all_biases[i]))
 
-        return self.all_nodes[len(self.all_nodes)-1]
+        return (self.all_nodes[len(self.all_nodes)-1] - out)**2
+
+    # This is fucked up
+    def learn(self, data, out):
+        result = self.get_value(data, out)
