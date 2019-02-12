@@ -1,0 +1,1 @@
+There will be all base neural networks without using libraries like Tensor Flow

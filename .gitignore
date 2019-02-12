@@ -11,7 +11,8 @@ __pycache__/
 .idea
 .Python
 build/
-Data/
+Data/*
+!Data/Data.txt
 develop-eggs/
 dist/
 downloads/
